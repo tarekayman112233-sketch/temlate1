@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- إضافة خصائص المشاركة (Open Graph) -->
     <meta property="og:title" content="دعوة زفاف رامي وملاك">
     <meta property="og:description" content="يسعدنا مشاركتكم فرحة عمرنا، ننتظر حضوركم الكريم">
     <meta property="og:image" content="https://tdesignation.online/linkimage.jpg">
@@ -33,7 +32,17 @@
             z-index: 30; transition: opacity 1s ease; cursor: pointer;
         }
         .envelope-screen.opened { opacity: 0; pointer-events: none; }
-        .envelope-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        /* إضافة الحركة للظرف */
+        .envelope-img { 
+            width: 100%; height: 100%; object-fit: cover; display: block; 
+            animation: pulse-animation 2s infinite ease-in-out;
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
 
         /* شاشة الانتظار */
         .thank-you-screen {
@@ -74,7 +83,7 @@
             isMusicPlaying = true;
             
             setTimeout(() => {
-                window.open("https://joyinvites.com/rami-malak/page-3?", "_blank");
+                window.open("https://joyinvites.com/rami-malak/page-3", "_blank");
             }, 800);
         }
 
