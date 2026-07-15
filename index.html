@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Meta Tags للمشاركة -->
     <meta property="og:title" content="دعوة زفاف رامي وملاك">
     <meta property="og:description" content="يسعدنا مشاركتكم فرحة عمرنا">
     <meta property="og:image" content="https://tdesignation.online/linkimage.jpg">
@@ -13,80 +12,27 @@
 
     <title>دعوة زفاف رامي وملاك</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #faf5f0; height: 100vh; overflow: hidden; }
-
-        .wrapper { position: relative; width: 100%; height: 100%; }
-
-        /* الظرف مع الحركة */
+        body { background-color: #faf5f0; height: 100vh; overflow: hidden; }
+        
         .envelope-screen {
-            position: absolute; width: 100%; height: 100%; z-index: 30; 
-            cursor: pointer; display: flex; justify-content: center; align-items: center;
-            transition: opacity 0.5s ease;
-            animation: pulse-animation 2s infinite ease-in-out;
+            width: 100vw; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer;
         }
-        @keyframes pulse-animation {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .envelope-screen.opened { opacity: 0; pointer-events: none; }
         .envelope-img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* شاشة الانتظار */
-        .thank-you-screen {
-            position: absolute; width: 100%; height: 100%;
-            display: flex; flex-direction: column; justify-content: center;
-            align-items: center; z-index: 20;
-        }
-        .music-control-btn {
-            background-color: #d89b8c; color: white; border: none;
-            border-radius: 50px; padding: 15px 30px; font-weight: 600; cursor: pointer;
-        }
     </style>
 </head>
 <body>
 
-    <audio id="bg-piano" src="songwed.mp3" loop></audio>
-
-    <div class="wrapper">
-        <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
-            <img src="envelope-closed.png" class="envelope-img" alt="فتح الدعوة">
-        </div>
-
-        <div class="thank-you-screen">
-            <h2 style="color:#564538; margin-bottom: 20px;">أهلاً بك في دعوتنا ✨</h2>
-            <button class="music-control-btn" onclick="toggleAudio()">
-                <span id="music-icon">⏸</span> <span id="music-label">إيقاف الموسيقى</span>
-            </button>
-        </div>
+    <div class="envelope-screen" onclick="openEnvelope()">
+        <img src="envelope-closed.png" class="envelope-img" alt="اضغط لفتح الدعوة">
     </div>
 
     <script>
-        const bgAudio = document.getElementById('bg-piano');
-        let isMusicPlaying = false;
-
         function openEnvelope() {
-            // تشغيل الصوت فوراً
-            bgAudio.play().catch(e => console.log(e));
-            isMusicPlaying = true;
-            
-            // تفعيل حركة الظرف
-            document.getElementById('envelopeScreen').classList.add('opened');
-            
-            // الانتقال المباشر بدون تأخير طويل لضمان استجابة الآيفون
-            setTimeout(() => {
-                window.location.href = "https://joyinvites.com/rami-malak/page-3?";
-            }, 300);
-        }
-
-        function toggleAudio() {
-            if (isMusicPlaying) { bgAudio.pause(); isMusicPlaying = false; }
-            else { bgAudio.play(); isMusicPlaying = true; }
-            
-            document.getElementById('music-icon').innerText = isMusicPlaying ? "⏸" : "▶";
-            document.getElementById('music-label').innerText = isMusicPlaying ? "إيقاف الموسيقى" : "تشغيل الموسيقى";
+            // انتقال مباشر وفوري بدون أي حركات أو تأخير أو تشغيل صوت
+            window.location.href = "https://joyinvites.com/rami-malak/page-3?";
         }
     </script>
 </body>
